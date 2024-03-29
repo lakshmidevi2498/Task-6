@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./assests/js/validation.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+         <!-- Header  -->
+    <div class="container g-2 mx-auto bg-light"
+        style="background-color:white;border-radius:5px;width:700px;max-width:100%">
+        <div class="header card-body"
+            style="background-color: #f7f7f7;padding:40px;border-bottom:1px;text-align:center; ">
+            <h3 ><mark style="color:rgb(103, 127, 4)";>REGISTRATION FORM</mark></h3>
+        </div>
+        <form action="" class="form card-body " id="form" style="padding:30px;">
+
+             <!-- form start  -->
+
+                    <!-- Full name start -->
+            <div class="field mb-2 p-3">
+                <label class=" mb-1" >Full name</label>
+                <input class=" form-control w-100 p-2" type="text"  id="uname" style=" border-style: inset;" onchange="validate()">
+                <p style="display: none;" id="fnp" class="text-danger">*please enter your name</p>
+                <p style="display: none;" id="valid1" class="text-danger">*please enter first letter capital</p>
+                <p style="display: none;" id="valid2" class="text-danger">*please enter only letters </p>
+                <p style="display: none;" id="valid3" class="text-danger">*please enter first letter capital </p>
+                <p style="display: none;" id="valid03" class="text-danger">*name contain atleast morethan 2 letters </p>
+            </div>
+
+
+                       <!-- E-mail start-->
+            <div class="field mb-2 p-3"> 
+                <label class="  mb-1">E-mail</label>
+                <input class="form-control w-100 p-2" type="text" id="email" style=" border-style: inset;" onchange="validate()">
+                <p style="display: none;" id="fne" class="text-danger">*please enter your E-mail</p>
+                <p style="display: none;" id="valid5" class="text-danger">*please enter valid E-mail</p>
+            </div>
+
+
+                      <!-- Mobile number start -->
+            <div class="field mb-2 p-3">
+                <label class=" mb-1">Mobile</label>
+                <input  class=" form-control w-100 p-2 "style=" border-style: inset; "placeholder="+910000000000" type="text"  id="num"  onchange="validate()">
+                <p style="display: none;" id="fnm" class="text-danger">*please enter your mobile number</p>
+                <p style="display: none;" id="valid08" class="text-danger">*please enter correct  mobile number</p>
+                <p style="display: none;" id="valid8" class="text-danger">*please enter only numbers</p>
+                <p style="display: none;" id="valid9" class="text-danger">*mobile   number should start with 9,8,7,6 only</p>
+                <p style="display: none;" id="fnl" class="text-danger">*please enter country code + 10 digit mobile numbers</p>
+                <p style="display: none;" id="valid07" class="text-danger">*please enter  10 digit mobile numbers</p>
+            </div>
+
+                       <!-- password start -->
+            <div class="field mb-2 p-3">
+                <label class=" mb-1">Password</label>
+                <input style=" border-style: inset; " class=" form-control w-100 p-2 "type="password"  id="password" onchange="validate()">
+                <p style="display: none;" id="fnps" class="text-danger">*please enter your password</p>
+                <p style="display: none;" id="valid10" class="text-danger">*password contain atleast one capital letter,special character,one number and its length should be minimum 8 characters.</p>
+            </div>
+
+
+                       <!-- confirm password start -->
+            <div class="field mb-2 p-3">
+                <label class=" mb-1">Confirm Password</label>
+                <input style=" border-style: inset; "class=" form-control w-100 p-2 " type="password"  id="cpassword" onchange="validate()">
+                <p style="display: none;" id="fncp" class="text-danger">*please enter your password</p>
+                <p style="display: none;" id="fnpp" class="text-danger">*password not matched</p>
+            </div>
+
+
+                       <!-- gender start -->
+            <div class="field mb-2 p-3">
+                <label class=" mb-1">Gender</label><br>
+                <label><input type="radio" name="gender" id="male" onchange="validate()"> Male</label><br>
+                <label><input type="radio" name="gender" id="female" onchange="validate()"> Female</label>
+                <p style="display: none;" id="error" class="text-danger">*Please choose the gender</p>
+            </div>
+
+                      <!-- state start -->
+            <div class="d-flex justify-content-between">
+                <div class="field dropdown mb-2 p-3">
+                    <label class="mb-1">State</label>
+                    <select name="statee" class="form-select" style="width:100%"id="state" onchange="validate()">
+                        <option value="" selected>--Select State--</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Nellore">Nellore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Vizag">Vizag</option>
+                        <option value="Rajamundry">Rajamundry</option>
+                    </select>
+                    <p style="display: none;" id="state-error" class="text-danger">*Please choose a state</p>
+                </div>
+
+
+                         <!-- district start -->
+                <div class="field mb-2 p-3">
+                    <label class="mb-1">District</label>
+                    <select id="country" class="form-select" style="width:100%;" onchange="validate()">
+                        <option value="" selected>--Select District--</option>
+                        <option value="East Godavari">East Godavari</option>
+                        <option value="West Godavari">West Godavari</option>
+                        <option value="Konaseema">Konaseema</option>
+                        <option value="Kadapa">Kadapa</option>
+                        <option value="Anantapur">Anantapur</option>
+                    </select>
+                    <p style="display: none;" id="country-error" class="text-danger">*Please choose a District</p>
+                </div>
+            </div>
+
+                   <!-- checkbox start -->
+             <div class="field">
+                <input type="checkbox" id="check" onchange="validate()">
+                <label >Agree to the Terms and Conditions</label>
+                <p style="display: none;" class="text-danger" id="chp">*Please agree to the Terms and Conditions</p>
+            </div>
+
+
+                    <!-- button start -->
+            <div class="button mt-3" id="butn">
+                <input type="button" class="btn btn-primary"  value="Submit" onclick="validate()" >
+            </div>  
+        </form>
+    </div>
+                         <!-- container close -->
+
+                   <!-- form end -->
+
+            <!-- The Modal -->
+   
+    <div class="modal" id="modall">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Registration completed</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <p class="modal-body">Your Registration completed successfully,data addes successfully.</p>
+
+            </div>
+            <div class="modal-footer">
+              <a href="" type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</a>
+            </div>
+          </div>
+        </div>
+    </div>
+            <!-- MOdal end -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
